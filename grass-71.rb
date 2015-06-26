@@ -1,3 +1,5 @@
+## Slightly changed from https://github.com/OSGeo/homebrew-osgeo4mac
+
 class Grass71 < Formula
   homepage "http://grass.osgeo.org/"
   head 'https://svn.osgeo.org/grass/grass/trunk'
