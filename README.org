@@ -20,3 +20,6 @@ To use this tap do:
   brew tap rkrug/experimental
   brew install ...
 #+end_src
+
+If you have questions, problems, suggestions, ... please use the issue tracker.
+
