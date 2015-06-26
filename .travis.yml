@@ -11,5 +11,6 @@ script:
   - brew test nc_spm_08_grass7
   - brew uninstall nc_spm_08_grass7
   - brew audit grass-71
-  - brew install -v HEAD grass-71
+  - brew install -v --HEAD grass-71
   - brew test grass-71
+  - brew uninstall grass-71
