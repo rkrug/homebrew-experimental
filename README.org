@@ -1,0 +1,22 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:nil d:(not "LOGBOOK") date:t e:t
+#+OPTIONS: email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Experimental homebrew Tap
+#+DATE: <2015-06-26 Fri>
+#+AUTHOR: Rainer M. Krug
+#+EMAIL: Rainer@krugs.de
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.5.1 (Org mode 8.3beta)
+
+This [[http://brew.sh][homebrew]] Tap contains formulas in development. They should be working, but nothing is guaranteed!
+
+All contributions are welcome.
+
+To use this tap do:
+#+begin_src sh 
+  brew tap rkrug/experimental
+  brew install ...
+#+end_src
