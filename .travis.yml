@@ -5,12 +5,11 @@ install:
   - brew tap rkrug/experimental
   - brew tap homebrew/science
   - brew update
+env:
+  - PACKAGE=nc_spm_08_grass7 INSTALLOPTIONS=""
+  - PACKAGE=grass-71         INSTALLOPTIONS="--HEAD"        
 script:
-  - brew audit nc_spm_08_grass7
-  - brew install nc_spm_08_grass7
-  - brew test -v nc_spm_08_grass7
-  - brew uninstall nc_spm_08_grass7
-  - brew audit grass-71
-  - brew install --HEAD grass-71
-  - brew -v test grass-71
-  - brew uninstall grass-71
+#  - brew audit $PACKAGE
+  - brew install $INSTALLOPTIONS $PACKAGE
+  - brew test -v $PACKAGE
+  - brew uninstall $PACKAGE
