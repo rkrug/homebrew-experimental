@@ -49,7 +49,7 @@ class Grass71 < Formula
   depends_on "ffmpeg" => :optional
   option "without-nc_spm_08_grass7", "Do not install the North Carolina sample data set. If not installed, the tests will fail!"
   depends_on "nc_spm_08_grass7" => :recommended
-  
+
   def headless?
     # The GRASS GUI is based on WxPython.
     build.without? "gui"

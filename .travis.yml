@@ -3,10 +3,15 @@ before_install:
   - brew update
 install:
   - brew tap rkrug/experimental
+  - brew tap homebrew/science
   - brew update
 env:
-  - PACKAGE=grass-71
+  - PACKAGE=nc_spm_08_grass7
+  - PACKAGEHEAD=grass-71
 script:
+  - brew audit $PACKAGEHEAD
   - brew audit $PACKAGE
-  - brew install -v $PACKAGE
+  - brew install -v HEAD $PACKAGEHEAD
+  - brew install -v HEAD $PACKAGE
+  - brew test $PACKAGEHEAD
   - brew test $PACKAGE
