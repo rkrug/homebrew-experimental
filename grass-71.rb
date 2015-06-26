@@ -1,7 +1,7 @@
 class Grass71 < Formula
   homepage "http://grass.osgeo.org/"
   head 'https://svn.osgeo.org/grass/grass/trunk'
-  
+
   stable do
 ##    url "http://grass.osgeo.org/grass71/source/snapshot/grass-7.1.svn_src_snapshot_2015_05_30.tar.gz"
 ##    sha1 "a162c38efb64d8e5754a7b66ba34558cd6bf96c4"
@@ -14,7 +14,7 @@ class Grass71 < Formula
   head do
     patch :DATA
   end
-    
+
 ##  bottle do
 ##    root_url "http://qgis.dakotacarto.com/osgeo4mac/bottles"
 ##    revision 1
@@ -45,7 +45,7 @@ class Grass71 < Formula
   depends_on "liblas" => :optional
   depends_on "netcdf" => :optional
   depends_on "ffmpeg" => :optional
-  option "without nc_spm_08_grass7", "Do not install the North Carolina sample data set. If not installed, the =tests will fail!"
+  option "without-nc_spm_08_grass7", "Do not install the North Carolina sample data set. If not installed, the tests will fail!"
   depends_on "nc_spm_08_grass7" => :recommended
   
   def headless?
