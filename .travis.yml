@@ -1,4 +1,4 @@
-language: objective-c
+Language: objective-c
 before_install:
   - brew update
 install:
@@ -6,10 +6,10 @@ install:
   - brew tap homebrew/science
   - brew update
 env:
-  - PACKAGE=nc_spm_08_grass7 INSTALLOPTIONS=""
-  - PACKAGE=grass-71         INSTALLOPTIONS="--HEAD"        
+  - PACKAGE=nc_spm_08_grass7 INSTALLOPTIONS=""         AUDIT="true"
+  - PACKAGE=grass-71         INSTALLOPTIONS="--HEAD"   AUDIT="false"     
 script:
-#  - brew audit $PACKAGE
+  - if [[ "$AUDIT" == "true" ]]; then brew audit -v $PACKAGE; else echo "[SKIPPED] brew audit -v $PACKAGE"; fi
   - brew install $INSTALLOPTIONS $PACKAGE
   - brew test -v $PACKAGE
   - brew uninstall $PACKAGE
