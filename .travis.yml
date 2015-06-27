@@ -1,4 +1,4 @@
-Language: objective-c
+language: objective-c
 before_install:
   - brew update
 install:
