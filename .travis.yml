@@ -3,13 +3,16 @@ before_install:
   - brew update
 install:
   - brew tap rkrug/experimental
+  - brew tap rkrug/head-only
+  - brew tap rkrug/dev-only
   - brew tap homebrew/science
   - brew update
 env:
-  - PACKAGE=nc_spm_08_grass7 INSTALLOPTIONS=""         AUDIT="true"
-  - PACKAGE=grass-71         INSTALLOPTIONS="--HEAD"   AUDIT="false"     
+  - RECIPE=nc_spm_08_grass7 INSTALLOPTIONS=""         AUDIT="true"
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD"   AUDIT="false"     
 script:
-  - if [[ "$AUDIT" == "true" ]]; then brew audit -v $PACKAGE; else echo "[SKIPPED] brew audit -v $PACKAGE"; fi
-  - brew install $INSTALLOPTIONS $PACKAGE
-  - brew test -v $PACKAGE
-  - brew uninstall $PACKAGE
+  - if [[ "$AUDIT" == "true" ]]; then brew audit -v $RECIPE; else echo "[SKIPPED] brew audit -v $RECIPE"; fi
+#  - brew audit -v $RECIPE 
+  - brew install $INSTALLOPTIONS $RECIPE
+  - brew test -v $RECIPE
+  - brew uninstall $RECIPE
