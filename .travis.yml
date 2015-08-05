@@ -8,11 +8,14 @@ install:
   - brew tap homebrew/science
   - brew update
 env:
-  - RECIPE=nc_spm_08_grass7 INSTALLOPTIONS=""         AUDIT="true"
-  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD"   AUDIT="false"     
+  - RECIPE=nc_spm_08_grass7 INSTALLOPTIONS=""
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7"
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-liblas"
+    - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-openblas"
 script:
-  - if [[ "$AUDIT" == "true" ]]; then brew audit -v $RECIPE; else echo "[SKIPPED] brew audit -v $RECIPE"; fi
+  - brew audit -v $RECIPE
 #  - brew audit -v $RECIPE 
   - brew install $INSTALLOPTIONS $RECIPE
   - brew test -v $RECIPE
+  - brew info $RECIPE
   - brew uninstall $RECIPE
