@@ -11,10 +11,9 @@ env:
   - RECIPE=nc_spm_08_grass7 INSTALLOPTIONS=""
   - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7"
   - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-liblas"
-    - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-openblas"
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-openblas"
 script:
   - brew audit -v $RECIPE
-#  - brew audit -v $RECIPE 
   - brew install $INSTALLOPTIONS $RECIPE
   - brew test -v $RECIPE
   - brew info $RECIPE
