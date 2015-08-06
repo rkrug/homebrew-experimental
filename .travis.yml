@@ -13,6 +13,7 @@ env:
   - RECIPE=grass-71         INSTALLOPTIONS="-v --HEAD --with-nc_spm_08_grass7 --with-liblas"
   - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-ffmpeg --with-mysql --with-netcdf --with-postgresql --with-openblas"
 script:
+  - brew install --build-from-source liblas
   - brew audit -v $RECIPE
   - brew install $INSTALLOPTIONS $RECIPE
   - brew test -v $RECIPE
