@@ -1,19 +1,17 @@
 # Author: Rainer Krug, Rainer@krugs.de
 
 # For OS X
-language: objective-c
 
-env:
-  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD"
-  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-ffmpeg --with-mysql --with-netcdf --with-postgresql --with-openblas --with-liblas"
+# language: objective-c
+os:
+  - osx
 
 before_install:
-  - ./.travis.osx.before_install.sh
+  - ./.travis.$TRAVIS_OS_NAME.before_install.sh
 
 install:
-  - ./.travis.osx.install.sh
+  - ./.travis.$TRAVIS_OS_NAME.install.sh
   
-
 script:
-  - ./.travis.osx.script.sh
+  - ./.travis.$TRAVIS_OS_NAME.script.sh
   
