@@ -1,22 +1,19 @@
+# Author: Rainer Krug, Rainer@krugs.de
+
+# For OS X
 language: objective-c
-before_install:
-  - brew update
-install:
-  - brew tap rkrug/experimental
-  - brew tap rkrug/head-only
-  - brew tap rkrug/dev-only
-  - brew tap homebrew/science
-  - brew update
+
 env:
-  - RECIPE=nc_spm_08_grass7 INSTALLOPTIONS=""
-  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7"
-  - RECIPE=grass-71         INSTALLOPTIONS="-v --HEAD --with-nc_spm_08_grass7 --with-liblas"
-  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-ffmpeg --with-mysql --with-netcdf --with-postgresql --with-openblas"
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD"
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-ffmpeg --with-mysql --with-netcdf --with-postgresql --with-openblas --with-liblas"
+
+before_install:
+  - ./.travis.osx.before_install.sh
+
+install:
+  - ./.travis.osx.install.sh
+  
+
 script:
-  - brew install liblas
-  - brew reinstall --build-from-source liblas
-  - brew audit -v $RECIPE
-  - brew install $INSTALLOPTIONS $RECIPE
-  - brew test -v $RECIPE
-  - brew info $RECIPE
-  - brew uninstall $RECIPE
+  - ./.travis.osx.script.sh
+  
