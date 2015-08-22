@@ -19,5 +19,5 @@ brew install --only-dependencies \
      grass-71
 
 ## download and install test dataset
-# wget http://grass.osgeo.org/sampledata/north_carolina/nc_basic_spm_grass7.tar.gz
-# tar xzf ./nc_basic_spm_grass7.tar.gz
+wget http://grass.osgeo.org/sampledata/north_carolina/nc_basic_spm_grass7.tar.gz
+tar xzf ./nc_basic_spm_grass7.tar.gz
