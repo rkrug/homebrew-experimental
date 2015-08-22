@@ -5,17 +5,13 @@
 os:
        - osx 
        - linux
-       
-matrix:
-  include
-     - os: linux
-       language: c
-       compiler: gcc
-     - os: linux
-       language: c
-       compiler: clang
-     - os: osx
-       compiler: objective-c
+
+language:
+       - c
+
+compiler:
+       - gcc
+       - clang
        
 before_install:
   - ./.travis.$TRAVIS_OS_NAME.before_install.sh
