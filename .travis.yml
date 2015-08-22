@@ -5,6 +5,7 @@
 # language: objective-c
 os:
   - osx
+  - linux
 
 before_install:
   - ./.travis.$TRAVIS_OS_NAME.before_install.sh
