@@ -4,7 +4,6 @@
 
 # language: objective-c
 os:
-  - linux
   - osx
 
 before_install:
