@@ -1,24 +1,26 @@
 # Author: Rainer Krug, Rainer@krugs.de
 
-sudo: required
-
-matrix:
-   include:
-      - os: linux
-        language: c
-        compiler: gcc
-      - os: linux
-        language: c
-        compiler: clang
-      - os: osx
-        compiler: objective-c
+language: objective-c
 
 before_install:
-  - ./.travis.$TRAVIS_OS_NAME.before_install.sh
+  - brew update
 
 install:
-  - ./.travis.$TRAVIS_OS_NAME.install.sh
-  
+  - brew tap rkrug/experimental
+  - brew tap rkrug/head-only
+  - brew tap rkrug/dev-only
+  - brew tap homebrew/science
+  - brew update
+
+env:
+  - RECIPE=grass-71         INSTALLOPTIONS="--HEAD --with-nc_spm_08_grass7 --with-ffmpeg --with-mysql --with-netcdf --with-postgresql --with-openblas --with-liblas"
+
 script:
-  - ./.travis.$TRAVIS_OS_NAME.script.sh
+  - brew install liblas
+  - brew reinstall --build-from-source liblas
+  - brew audit -v $RECIPE
+  - brew install $INSTALLOPTIONS $RECIPE
+  - brew test -v $RECIPE
+  - brew info $RECIPE
+  - brew uninstall $RECIPE
   
